@@ -125,23 +125,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_ESRIGraylight_0');
-        map.getPane('pane_ESRIGraylight_0').style.zIndex = 400;
-        var layer_ESRIGraylight_0 = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-            pane: 'pane_ESRIGraylight_0',
-            opacity: 1.0,
-            attribution: '',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 20
-        });
-        layer_ESRIGraylight_0;
-        map.addLayer(layer_ESRIGraylight_0);
-        map.createPane('pane_OpenTopoMap_1');
-        map.getPane('pane_OpenTopoMap_1').style.zIndex = 401;
-        var layer_OpenTopoMap_1 = L.tileLayer('https://a.tile.opentopomap.org/{z}/{x}/{y}.png', {
-            pane: 'pane_OpenTopoMap_1',
+        map.createPane('pane_OpenTopoMap_0');
+        map.getPane('pane_OpenTopoMap_0').style.zIndex = 400;
+        var layer_OpenTopoMap_0 = L.tileLayer('https://a.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OpenTopoMap_0',
             opacity: 1.0,
             attribution: '<a href="https://www.openstreetmap.org/copyright">Kartendaten: © OpenStreetMap-Mitwirkende, SRTM | Kartendarstellung: © OpenTopoMap (CC-BY-SA)</a>',
             minZoom: 1,
@@ -149,8 +136,21 @@
             minNativeZoom: 0,
             maxNativeZoom: 18
         });
-        layer_OpenTopoMap_1;
-        map.addLayer(layer_OpenTopoMap_1);
+        layer_OpenTopoMap_0;
+        map.addLayer(layer_OpenTopoMap_0);
+        map.createPane('pane_ESRIGraylight_1');
+        map.getPane('pane_ESRIGraylight_1').style.zIndex = 401;
+        var layer_ESRIGraylight_1 = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRIGraylight_1',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRIGraylight_1;
+        map.addLayer(layer_ESRIGraylight_1);
         map.createPane('pane_GoogleSatellite_2');
         map.getPane('pane_GoogleSatellite_2').style.zIndex = 402;
         var layer_GoogleSatellite_2 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
@@ -540,8 +540,8 @@
             {label: 'Daerah Terdampak<br /><table><tr><td style="text-align: center;"><img src="legend/DaerahTerdampak_4_Berat0.png" /></td><td>Berat</td></tr><tr><td style="text-align: center;"><img src="legend/DaerahTerdampak_4_Sedang1.png" /></td><td>Sedang</td></tr><tr><td style="text-align: center;"><img src="legend/DaerahTerdampak_4_Ringan2.png" /></td><td>Ringan</td></tr></table>', layer: layer_DaerahTerdampak_4},
             {label: "OSM Standard", layer: layer_OSMStandard_3},
             {label: "Google Satellite", layer: layer_GoogleSatellite_2},
-            {label: "OpenTopoMap", layer: layer_OpenTopoMap_1},
-            {label: "ESRI Gray (light)", layer: layer_ESRIGraylight_0},]
+            {label: "ESRI Gray (light)", layer: layer_ESRIGraylight_1},
+            {label: "OpenTopoMap", layer: layer_OpenTopoMap_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
