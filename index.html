@@ -36,7 +36,7 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/DaerahTerdampak_4.js"></script>
+        <script src="data/KondisiDampak_4.js"></script>
         <script src="data/BatasKecamatan_5.js"></script>
         <script src="data/BatasKabKota_6.js"></script>
         <script src="data/BatasProvinsi_7.js"></script>
@@ -44,7 +44,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-4.590665381096078,84.90469646875034],[7.349010951828209,111.59075904442625]]);
+        }).fitBounds([[-0.06566536617004864,88.53437883773996],[8.01618958584581,104.50159512893029]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -192,7 +192,7 @@
         });
         layer_OSMStandard_3;
         map.addLayer(layer_OSMStandard_3);
-        function pop_DaerahTerdampak_4(feature, layer) {
+        function pop_KondisiDampak_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['METADATA'] !== null ? autolinker.link(String(feature.properties['METADATA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -214,11 +214,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_DaerahTerdampak_4_0(feature) {
+        function style_KondisiDampak_4_0(feature) {
             switch(String(feature.properties['Field'])) {
                 case 'Berat':
                     return {
-                pane: 'pane_DaerahTerdampak_4',
+                pane: 'pane_KondisiDampak_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -233,7 +233,7 @@
                     break;
                 case 'Sedang':
                     return {
-                pane: 'pane_DaerahTerdampak_4',
+                pane: 'pane_KondisiDampak_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -248,7 +248,7 @@
                     break;
                 case 'Ringan':
                     return {
-                pane: 'pane_DaerahTerdampak_4',
+                pane: 'pane_KondisiDampak_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -263,20 +263,20 @@
                     break;
             }
         }
-        map.createPane('pane_DaerahTerdampak_4');
-        map.getPane('pane_DaerahTerdampak_4').style.zIndex = 404;
-        map.getPane('pane_DaerahTerdampak_4').style['mix-blend-mode'] = 'normal';
-        var layer_DaerahTerdampak_4 = new L.geoJson(json_DaerahTerdampak_4, {
+        map.createPane('pane_KondisiDampak_4');
+        map.getPane('pane_KondisiDampak_4').style.zIndex = 404;
+        map.getPane('pane_KondisiDampak_4').style['mix-blend-mode'] = 'normal';
+        var layer_KondisiDampak_4 = new L.geoJson(json_KondisiDampak_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DaerahTerdampak_4',
-            layerName: 'layer_DaerahTerdampak_4',
-            pane: 'pane_DaerahTerdampak_4',
-            onEachFeature: pop_DaerahTerdampak_4,
-            style: style_DaerahTerdampak_4_0,
+            dataVar: 'json_KondisiDampak_4',
+            layerName: 'layer_KondisiDampak_4',
+            pane: 'pane_KondisiDampak_4',
+            onEachFeature: pop_KondisiDampak_4,
+            style: style_KondisiDampak_4_0,
         });
-        bounds_group.addLayer(layer_DaerahTerdampak_4);
-        map.addLayer(layer_DaerahTerdampak_4);
+        bounds_group.addLayer(layer_KondisiDampak_4);
+        map.addLayer(layer_KondisiDampak_4);
         function pop_BatasKecamatan_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -463,7 +463,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/PoskoBantuanWarga_8.svg',
-            iconSize: [14.709704999999998, 14.709704999999998]
+            iconSize: [14.709685999999998, 14.709685999999998]
         }),
                 interactive: true,
             }
@@ -552,7 +552,7 @@
             {label: '<img src="legend/BatasProvinsi_7.png" /> Batas Provinsi', layer: layer_BatasProvinsi_7},
             {label: '<img src="legend/BatasKabKota_6.png" /> Batas Kab/Kota', layer: layer_BatasKabKota_6},
             {label: '<img src="legend/BatasKecamatan_5.png" /> Batas Kecamatan', layer: layer_BatasKecamatan_5},
-            {label: 'Daerah Terdampak<br /><table><tr><td style="text-align: center;"><img src="legend/DaerahTerdampak_4_Berat0.png" /></td><td>Berat</td></tr><tr><td style="text-align: center;"><img src="legend/DaerahTerdampak_4_Sedang1.png" /></td><td>Sedang</td></tr><tr><td style="text-align: center;"><img src="legend/DaerahTerdampak_4_Ringan2.png" /></td><td>Ringan</td></tr></table>', layer: layer_DaerahTerdampak_4},
+            {label: 'Kondisi Dampak<br /><table><tr><td style="text-align: center;"><img src="legend/KondisiDampak_4_Berat0.png" /></td><td>Berat</td></tr><tr><td style="text-align: center;"><img src="legend/KondisiDampak_4_Sedang1.png" /></td><td>Sedang</td></tr><tr><td style="text-align: center;"><img src="legend/KondisiDampak_4_Ringan2.png" /></td><td>Ringan</td></tr></table>', layer: layer_KondisiDampak_4},
             {label: "OSM Standard", layer: layer_OSMStandard_3},
             {label: "Google Satellite", layer: layer_GoogleSatellite_2},
             {label: "ESRI Gray (light)", layer: layer_ESRIGraylight_1},
